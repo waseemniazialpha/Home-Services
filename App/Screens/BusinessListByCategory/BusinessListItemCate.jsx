@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 export default function BusinessListItemCate({ business }) {
   return (
     <View style={styles.cointnier}>
-      <Image source={{ uri: business?.image[0]?.url }}
+      <Image source={{ uri: business?.images[0]?.url }}
         style={styles.imagestyle}
 
       />
