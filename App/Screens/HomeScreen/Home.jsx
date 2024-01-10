@@ -1,25 +1,25 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import Header from './Header'
-import Slider from './Slider'
-import Categories from './Categories'
-import BusinessList from './BusinessList'
-
+import { View, ScrollView } from 'react-native';
+import React from 'react';
+import Header from './Header';
+import Slider from './Slider';
+import Categories from './Categories';
+import BusinessList from './BusinessList';
 
 export default function Home() {
-
     return (
-        <View>
+        <View style={{ flex: 1 }}>
             <Header />
-            <View style={{padding:20}}>
-                <Slider />
-            </View>
-            <View style={{paddingHorizontal:20}}>
-                <Categories />
-            </View>
-            <View style={{paddingHorizontal:20}}>
-                <BusinessList />
-            </View>
+            <ScrollView style={{ flex: 1 }}>
+                <View style={{ padding: 20 }}>
+                    <Slider />
+                </View>
+                <View style={{ paddingHorizontal: 20 }}>
+                    <Categories />
+                </View>
+                <View style={{ paddingHorizontal: 20 }}>
+                    <BusinessList />
+                </View>
+            </ScrollView>
         </View>
-    )
+    );
 }
