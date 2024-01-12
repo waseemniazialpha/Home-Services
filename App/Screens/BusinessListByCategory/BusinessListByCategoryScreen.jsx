@@ -4,6 +4,8 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import { Ionicons } from '@expo/vector-icons';
 import GlobalApi from '../../Utils/GlobalApi';
 import BusinessListItemCate from './BusinessListItemCate';
+import Colors from '../../Utils/Colors';
+import PageHeading from '../../Components/PageHeading';
 
 export default function BusinessListByCategoryScreen() {
     const [businessList, setbusinessList] = useState([]);
@@ -23,19 +25,14 @@ export default function BusinessListByCategoryScreen() {
 
     return (
         <View style={{ padding: 20, paddingTop: 30 }}>
-            <TouchableOpacity style={{ display: 'flex', flexDirection: "row", gap: 10, alignItems: "center" }}
-                onPress={() => navigation.goBack()}
-            >
-                <Ionicons name="arrow-back-sharp" size={30} color="black" />
-                <Text style={{ fontSize: 25, fontFamily: "outfit-medium" }}>{param?.category}</Text>
-            </TouchableOpacity>
+            <PageHeading title={param.category}/>
 
-            <FlatList
+     {businessList?.length>0   ?    <FlatList
                 data={businessList}
                 renderItem={({ item, index }) => (
                     <BusinessListItemCate business={item} />
                 )}
-            />
+            />:<Text style={{fontSize:20,marginTop:'20%',textAlign:'center',color:Colors.GRAY}}>No Business Found</Text>}
         </View>
     )
 }
