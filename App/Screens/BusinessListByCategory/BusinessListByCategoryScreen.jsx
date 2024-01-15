@@ -18,7 +18,7 @@ export default function BusinessListByCategoryScreen() {
 
     const getBusinessListByCategory = () => {
         GlobalApi.getBusinessListByCategory(param.category).then(resp => {
-            console.log(resp.businessLists + "hellllooooooo")
+            // console.log(resp.businessLists + "hellllooooooo")
             setbusinessList(resp.businessLists)
         })
     }

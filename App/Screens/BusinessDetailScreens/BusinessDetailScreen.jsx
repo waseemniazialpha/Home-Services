@@ -28,7 +28,7 @@ export default function BusinessDetailScreen() {
             <Text style={{ fontSize: 25, fontFamily: "outfit-bold" }}>{business.name}</Text>
             <View style={{display:'flex',flexDirection:'row',alignItems:'center',gap:5,}}>
             <Text style={{ fontSize: 20, fontFamily: "outfit-medium",color:Colors.PRIMARY }}>{business.contactPerson} </Text>
-              <Text style={{ fontSize: 14, fontFamily: "outfit-medium" ,backgroundColor:Colors.PRIMARY_LIGHT,color:Colors.PRIMARY,borderRadius:5,alignSelf:'flex-start',padding:5,}}>{business.category.name}</Text>
+              <Text style={{ fontSize: 14, fontFamily: "outfit-medium" ,backgroundColor:Colors.PRIMARY_LIGHT,color:Colors.PRIMARY,borderRadius:5,alignSelf:'flex-start',padding:5,}}>{business.name}</Text>
             </View>
               <Text style={{ fontSize: 18, fontFamily: "outfit",color:Colors.GRAY }}><Ionicons name="location-sharp" size={20} color={Colors.PRIMARY} style={{marginRight:10}} />{business.address}</Text>
               <View style={{borderWidth:0.2,marginVertical:15,color:Colors.LIGHT_Gray}}></View>

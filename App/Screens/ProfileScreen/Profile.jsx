@@ -6,8 +6,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
 export default function Profile() {
   const navigation = useNavigation();
-  const param = useRoute().params;
-  const [business, setbusiness] = useState(param?.business)
+  // const param = useRoute().params;
+  // const [business, setbusiness] = useState(param?.business)
 
   const { signOut } = useClerk();
   const onLogoutPress = () => {
@@ -55,15 +55,14 @@ export default function Profile() {
       <View style={{ paddingTop: 50, marginLeft: 20, }}>
 
         <TouchableOpacity
-          
+          onPress={()=>navigation.push('Home')}
           style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 20, }}>
           <Ionicons name="home" size={36} color={Colors.PRIMARY} />
           <Text style={{ fontSize: 20, fontFamily: 'outfit' }}>Home</Text>
+
         </TouchableOpacity>
-
-
         <TouchableOpacity
-        //  onPress={() => navigation.push('booking',{business:business})}
+         onPress={() => navigation.push('booking')}
           style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 20, }}>
           <Ionicons name="bookmark-sharp" size={36} color={Colors.PRIMARY} />
           <Text style={{ fontSize: 20, fontFamily: 'outfit' }}>Booking</Text>
