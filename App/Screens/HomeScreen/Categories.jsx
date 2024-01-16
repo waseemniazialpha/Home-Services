@@ -21,25 +21,45 @@ export default function Categories() {
     }
 
     return (
-        <View>
+        <View style={{ paddingHorizontal: 20 }}>
             <Heading props="Categories" isViewAll={true} />
-            <FlatList
-                data={categories}
-                numColumns={4}
-                renderItem={({ item, index }) =>index <=3&&(
+            <View style={{
+                display: 'flex',
+                flexDirection: 'row',
 
-                        <TouchableOpacity
-                        onPress={()=>navigation.push('BusinessList',{category:item.name})}
+            }}>
+                {categories.map(item => (
+                    <TouchableOpacity
+                        key={item.id}
+                        onPress={() => navigation.push('BusinessList', { category: item.name })}
                         style={styles.container}>
-                            <View style={styles.icons}>
-                                <Image source={{ uri: item?.icon?.url }} style={{ width: 30, height: 30 }} />
+                        <View style={styles.icons}>
+                            <Image source={{ uri: item?.icon?.url }} style={{ width: 30, height: 30 }} />
+                        </View>
+                        <Text style={{ fontFamily: 'outfit-medium', marginTop: 2 }}>{item?.name}</Text>
+                    </TouchableOpacity>
+                ))}
+            </View>
+            {/* <FlatList
+                nestedScrollEnabled
+                data={categories}
+                keyExtractor={(item) => item.id.toString()}
+                numColumns={4}
+                renderItem={({ item, index }) => index <= 3 && (
 
-                            </View>
-                            <Text style={{ fontFamily: 'outfit-medium', marginTop: 2 }}>{item?.name}</Text>
-                        </TouchableOpacity>
-       
-    )}
-            />
+                    <TouchableOpacity
+                        onPress={() => navigation.push('BusinessList', { category: item.name })}
+                        style={styles.container}>
+                        <View style={styles.icons}>
+                            <Image source={{ uri: item?.icon?.url }} style={{ width: 30, height: 30 }} />
+
+                        </View>
+                        <Text style={{ fontFamily: 'outfit-medium', marginTop: 2 }}>{item?.name}</Text>
+                    </TouchableOpacity>
+
+                )}
+            /> */}
+
         </View>
     )
 }

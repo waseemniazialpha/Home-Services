@@ -5,10 +5,11 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { AntDesign } from '@expo/vector-icons';
 export default function BusinessListItemCate({ business, booking }) {
+  console.log({ business })
   const navigation = useNavigation();
   return (
     <TouchableOpacity
-      onPress={() => navigation.push('BusinessDetails', { business: business })}
+      onPress={() => navigation.push('BusinessDetails', { business: business != null ? business : null })}
       style={styles.cointnier}>
       <Image source={{ uri: business?.images[0]?.url }}
         style={styles.imagestyle}
@@ -22,8 +23,8 @@ export default function BusinessListItemCate({ business, booking }) {
           <Text
             style={[
               { padding: 5, fontSize: 14, alignSelf: 'flex-start', borderRadius: 5 },
-              booking?.bookingStatus === "Completed" ? { backgroundColor: '#08a613', color: Colors.WHITE } : booking?.bookingStatus === "InProgress" ? { backgroundColor: '#f5bc00', color: Colors.WHITE  } :
-                booking?.bookingStatus === "Canceled" ? { backgroundColor: '#ff1300',color:Colors.WHITE } : { backgroundColor: Colors.PRIMARY_LIGHT, color: Colors.PRIMARY }
+              booking?.bookingStatus === "Completed" ? { backgroundColor: '#08a613', color: Colors.WHITE } : booking?.bookingStatus === "InProgress" ? { backgroundColor: '#f5bc00', color: Colors.WHITE } :
+                booking?.bookingStatus === "Canceled" ? { backgroundColor: '#ff1300', color: Colors.WHITE } : { backgroundColor: Colors.PRIMARY_LIGHT, color: Colors.PRIMARY }
             ]}
           >
             {booking.bookingStatus}</Text>

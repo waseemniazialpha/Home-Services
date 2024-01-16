@@ -50,7 +50,9 @@ export default function BookingModal({businessId, hideModal }) {
             time:selectedTime,
             date:moment(selectedDate).format('DD-MMM-YYYY'),
             businessId:businessId,
+            note:note
         }
+        console.log("hello"+note)
         GlobalApi.createBooking(data).then(resp=>{
             console.log(resp)
             ToastAndroid.show('Booking Created Successfully!',ToastAndroid.LONG)
@@ -97,7 +99,7 @@ export default function BookingModal({businessId, hideModal }) {
             numberOfLines={4}
             multiline={true}
             style={styles.noteTextArea}
-            onChange={(text)=>setnote(text)}
+            onChangeText={(text)=>setnote(text)}
 
             />
             </View>

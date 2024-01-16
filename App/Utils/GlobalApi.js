@@ -95,7 +95,10 @@ const createBooking = async (data) => {
             date: "`+ data.date + `",
              time: "`+ data.time + `", 
              userEmail: "`+ data.userEmail + `",
-              userName: "`+ data.userName + `"}
+              userName: "`+ data.userName + `"
+              note:"`+data.note+`"
+            
+            }
               ) {
                 id
               }

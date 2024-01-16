@@ -15,7 +15,7 @@ export default function BusinessListItem({business}) {
       <View style={styles.infoContainer}>
       <Text style={{fontSize:17,fontFamily:'outfit-medium'}}>{business.name}</Text>
       <Text style={{fontFamily:'outfit',fontSize:13,color:Colors.GRAY}}>{business.contactPerson}</Text>
-      <Text style={{fontFamily:'outfit',fontSize:12,color:Colors.PRIMARY,padding:3,backgroundColor:Colors.PRIMARY_LIGHT,alignSelf:'flex-start',borderRadius:3,paddingHorizontal:7,}}>{business.category.name}</Text>
+      <Text style={{fontFamily:'outfit',fontSize:12,color:Colors.PRIMARY,padding:3,backgroundColor:Colors.PRIMARY_LIGHT,alignSelf:'flex-start',borderRadius:3,paddingHorizontal:7,}}>{business?.name}</Text>
       </View>
     </TouchableOpacity>
   )

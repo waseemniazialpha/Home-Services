@@ -2,7 +2,6 @@ import { View, Text, FlatList } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import GlobalApi from '../../Utils/GlobalApi'
 import { useUser } from '@clerk/clerk-expo'
-import BusinessListItem from '../HomeScreen/BusinessListItem'
 import BusinessListItemCate from '../BusinessListByCategory/BusinessListItemCate'
 
 export default function BookingScreen() {
@@ -29,9 +28,10 @@ export default function BookingScreen() {
         data={bookings}
         onRefresh={()=>getUserBookings()}
         refreshing={loading}
-        renderItem={({item,index})=>(
-          <BusinessListItemCate business={item?.businessList} booking={item}/>
-        )}
+        renderItem={({ item, index }) => {
+          if (item.businessList === null) return
+          return <BusinessListItemCate business={item?.businessList} booking={item} />
+        }}
         />
       </View>
     </View>

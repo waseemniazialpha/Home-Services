@@ -9,17 +9,16 @@ export default function Home() {
     return (
         <View style={{ flex: 1 }}>
             <Header />
-            <ScrollView style={{ flex: 1 }}>
+            <ScrollView style={{ flex: 1 }} >
                 <View style={{ padding: 20 }}>
                     <Slider />
                 </View>
-                <View style={{ paddingHorizontal: 20 }}>
-                    <Categories />
-                </View>
+                <Categories />
                 <View style={{ paddingHorizontal: 20 }}>
                     <BusinessList />
                 </View>
             </ScrollView>
+
         </View>
     );
 }
